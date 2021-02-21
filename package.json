@@ -1,0 +1,40 @@
+{
+  "name": "minecraft-server",
+  "version": "0.0.1",
+  "description": "Minecraft server in reasonml",
+  "license": "MIT",
+  "esy": {
+    "build": "dune build -p #{self.name}",
+    "buildDev": "refmterr dune build --promote-install-files --root . --only-package #{self.name}",
+    "release": {
+      "rewritePrefix": true,
+      "bin": [
+        "minecraftServer"
+      ]
+    },
+    "buildEnv": {
+      "ODOC_SYNTAX": "re"
+    }
+  },
+  "scripts": {
+    "test": "esy x minecraftServer",
+    "format": "esy dune build @fmt --auto-promote",
+    "doc": "esy dune build @doc"
+  },
+  "dependencies": {
+    "@opam/dune": ">=2.6",
+    "@opam/lwt": "5.4.0",
+    "@opam/ocaml-lsp-server": "*",
+    "@opam/ocamlfind-secondary": "*",
+    "@opam/reason": "*",
+    "@reason-native/console": "*",
+    "@reason-native/pastel": "*",
+    "ocaml": "~4.10.0"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*",
+    "@reason-native/rely": "*",
+    "refmterr": "*",
+    "@opam/odoc": "*"
+  }
+}

@@ -1,0 +1,1 @@
+let () = Console.log(Lib.Util.hello("batata"));

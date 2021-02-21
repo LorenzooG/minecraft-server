@@ -1,0 +1,4 @@
+(executable
+ (name minecraftServer)
+ (public_name minecraftServer)
+ (libraries console.lib lib lwt))
